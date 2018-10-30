@@ -111,9 +111,9 @@ temperature_control.bed.heater_pin                   1.22
 temperature_control.bed.pwm_frequency                1
 temperature_control.bed.max_pwm                      64
 
-temperature_control.bed.p_factor                     18.1
-temperature_control.bed.i_factor                     0.253
-temperature_control.bed.d_factor                     325
+temperature_control.bed.p_factor                     19.2
+temperature_control.bed.i_factor                     0.267
+temperature_control.bed.d_factor                     343
 temperature_control.bed.i_max                        64         # Set to max_pwm, unless getting large overshoots
 
 temperature_control.bed.max_temp                     100        # Halt if temp above this value is requestsed

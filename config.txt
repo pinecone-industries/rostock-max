@@ -82,9 +82,9 @@ temperature_control.hotend.heater_pin                1.23
 temperature_control.hotend.pwm_frequency             100
 temperature_control.hotend.max_pwm                   255
 
-#temperature_control.hotend.p_factor                 13.7
-#temperature_control.hotend.i_factor                 0.097
-#temperature_control.hotend.d_factor                 24
+#temperature_control.hotend.p_factor                 67.9
+#temperature_control.hotend.i_factor                 5.993
+#temperature_control.hotend.d_factor                 192
 
 temperature_control.hotend.max_temp                  225
 temperature_control.hotend.runaway_heating_timeout   900

@@ -52,16 +52,16 @@ gamma_max_rate                               30000.0
 
 extruder.hotend.enable                          true
 
-delta_current                                    1.2
+delta_current                                   1.2
 
-extruder.hotend.steps_per_mm                    492.45        # Steps per mm for extruder stepper
-extruder.hotend.default_feed_rate               600           # Default rate ( mm/minute ) for moves where only the extruder moves
-extruder.hotend.acceleration                    500           # Acceleration for the stepper motor mm/sec²
-extruder.hotend.max_speed                       50            # Maximum speed in mm/s
+extruder.hotend.steps_per_mm                    460
+extruder.hotend.default_feed_rate               600
+extruder.hotend.acceleration                    500
+extruder.hotend.max_speed                       50
 
-extruder.hotend.step_pin                        2.3           # Pin for extruder step signal
-extruder.hotend.dir_pin                         0.22          # Pin for extruder dir signal ( add '!' to reverse direction )
-extruder.hotend.en_pin                          0.21          # Pin for extruder enable signal
+extruder.hotend.step_pin                        2.3
+extruder.hotend.dir_pin                         0.22!
+extruder.hotend.en_pin                          0.21
 
 
 # -------------- Hotend -------------------- #

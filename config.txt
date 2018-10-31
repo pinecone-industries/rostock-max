@@ -86,12 +86,24 @@ temperature_control.hotend.max_pwm                   255
 #temperature_control.hotend.i_factor                 0.097
 #temperature_control.hotend.d_factor                 24
 
-temperature_control.hotend.max_temp                  300
-temperature_control.hotend.min_temp                  190
+temperature_control.hotend.max_temp                  225
 temperature_control.hotend.runaway_heating_timeout   900
-temperature_control.hotend.runaway_cooling_timeout   0
 temperature_control.hotend.runaway_range             20
 
+
+# -------------- Hotend Fan -------------------- #
+
+temperatureswitch.hotend.enable                      true
+temperatureswitch.hotend.switch                      fan_hotend
+temperatureswitch.hotend.designator                  T
+temperatureswitch.hotend.threshold_temp              60.0
+temperatureswitch.hotend.heatup_poll                 5
+temperatureswitch.hotend.cooldown_poll               10
+
+switch.fan_hotend.enable                             true
+switch.fan_hotend.input_on_command                   M42
+switch.fan_hotend.input_off_command                  M43
+switch.fan_hotend.output_pin                         2.4
 
 
 # -------------- Heated Bed -------------------- #
@@ -114,11 +126,16 @@ temperature_control.bed.max_pwm                      64
 temperature_control.bed.p_factor                     19.2
 temperature_control.bed.i_factor                     0.267
 temperature_control.bed.d_factor                     343
-temperature_control.bed.i_max                        64         # Set to max_pwm, unless getting large overshoots
+temperature_control.bed.i_max                        64
 
-temperature_control.bed.max_temp                     100        # Halt if temp above this value is requestsed
-temperature_control.bed.runaway_heating_timeout      300        # Halt if it takes more that {n} seconds to heat up
-temperature_control.bed.runaway_range                10         # Halt if temperature diverges from set point by {n} degrees
+temperature_control.bed.min_temp                     10
+temperature_control.bed.max_temp                     100
+
+# Halt if it takes more that {n} seconds to heat up
+temperature_control.bed.runaway_heating_timeout      300
+
+# Halt if temperature diverges from set point by {n} degrees
+temperature_control.bed.runaway_range                10
 
 
 # -------------- Endstops -------------------- #

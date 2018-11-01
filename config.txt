@@ -1,3 +1,27 @@
+# -------------- Steppers -------------------- #
+
+alpha_step_pin                               2.0
+alpha_dir_pin                                0.5!
+alpha_en_pin                                 0.4
+alpha_current                                2.0
+alpha_steps_per_mm                           106.67   
+alpha_max_rate                               30000.0
+
+beta_step_pin                                2.1
+beta_dir_pin                                 0.11
+beta_en_pin                                  0.10
+beta_current                                 2.0
+beta_steps_per_mm                            106.67 
+beta_max_rate                                30000.0
+
+gamma_step_pin                               2.2
+gamma_dir_pin                                0.20!
+gamma_en_pin                                 0.19
+gamma_current                                2.0
+gamma_steps_per_mm                           106.67 
+gamma_max_rate                               30000.0
+
+
 # -------------- Motion -------------------- #
 
 default_feed_rate                            4000
@@ -8,7 +32,6 @@ mm_max_arc_error                             0.01
 delta_segments_per_second                    80
 
 
-
 # -------------- Arm -------------------- #
 
 arm_solution                                 linear_delta
@@ -17,33 +40,9 @@ arm_radius                                   144.0
 
 
 # -------------- Planner -------------------- #
-# See http://smoothieware.org/motion-control
 
 acceleration                                 3000
 junction_deviation                           0.05
-
-
-# -------------- Steppers -------------------- #
-
-currentcontrol_module_enable                 true
-
-alpha_step_pin                               2.0
-alpha_dir_pin                                0.5!
-alpha_en_pin                                 0.4
-alpha_current                                2.0
-alpha_max_rate                               30000.0
-
-beta_step_pin                                2.1
-beta_dir_pin                                 0.11
-beta_en_pin                                  0.10
-beta_current                                 2.0
-beta_max_rate                                30000.0
-
-gamma_step_pin                               2.2
-gamma_dir_pin                                0.20!
-gamma_en_pin                                 0.19
-gamma_current                                2.0
-gamma_max_rate                               30000.0
 
 
 # -------------- Extruder -------------------- #
@@ -150,8 +149,8 @@ beta_min_endstop                             nc
 beta_max_endstop                             1.27^
 beta_homing_direction                        home_to_max
 beta_max                                     300
-gamma_min_endstop                            nc
 
+gamma_min_endstop                            nc
 gamma_max_endstop                            1.29^
 gamma_homing_direction                       home_to_max
 gamma_max                                    300
@@ -177,10 +176,6 @@ alpha_trim                                    0
 beta_trim                                     0
 gamma_trim                                    0
 
-# End of endstop config
-# Delete the above endstop section and uncomment next line and copy and edit Snippets/abc-endstop.config file to enable endstops for ABC axis
-#include abc-endstop.config
-
 
 # -------------- Bed Leveling -------------------- #
 
@@ -203,3 +198,6 @@ network.enable                               false            # Enable the ether
 network.webserver.enable                     true             # Enable the webserver
 network.telnet.enable                        true             # Enable the telnet server
 network.ip_address                           auto             # Use dhcp to get ip address
+
+currentcontrol_module_enable                 true
+currentcontrol_module_enable                 true

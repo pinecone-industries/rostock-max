@@ -1,21 +1,19 @@
 # -------------- Motion -------------------- #
 
-default_feed_rate                            4000             # Default speed (mm/minute) for G1/G2/G3 moves
-default_seek_rate                            4000             # Default speed (mm/minute) for G0 moves
-mm_per_arc_segment                           0.0              # Fixed length for line segments that divide arcs, 0 to disable
-#mm_per_line_segment                         5                # Cut lines into segments this size
-mm_max_arc_error                             0.01             # The maximum error for line segments that divide arcs 0 to disable
-                                                              # note it is invalid for both the above be 0
-                                                              # if both are used, will use largest segment length based on radius
-delta_segments_per_second                    100              # For deltas only, number of segments per second, set to 0 to disable
-                                                              # and use mm_per_line_segment
+default_feed_rate                            4000
+default_seek_rate                            4000
+mm_per_arc_segment                           0.0
+#mm_per_line_segment                         5
+mm_max_arc_error                             0.01
+delta_segments_per_second                    80
+
 
 
 # -------------- Arm -------------------- #
 
 arm_solution                                 linear_delta
-arm_length                                   250.0            # Length of an arm from hinge to hinge
-arm_radius                                   124.0            # Horizontal distance from hinge to hinge when the effector is centered
+arm_length                                   290.8
+arm_radius                                   144.0
 
 
 # -------------- Planner -------------------- #

@@ -21,6 +21,7 @@ gamma_current                                2.0
 gamma_steps_per_mm                           106.67 
 gamma_max_rate                               30000.0
 
+
 # -------------- Endstops -------------------- #
 
 endstops_enable                              true
@@ -39,11 +40,15 @@ beta_max                                     0
 gamma_min_endstop                            nc
 gamma_max_endstop                            1.29^
 gamma_homing_direction                       home_to_max
-gamma_max                                    300
+gamma_max                                    287.3
 
-alpha_max_travel                             1000
-beta_max_travel                              1000
-gamma_max_travel                             1000
+alpha_max_travel                             300
+beta_max_travel                              300
+gamma_max_travel                             300
+
+alpha_trim                                   0.0
+beta_trim                                    0.0
+gamma_trim                                   0.0
 
 alpha_fast_homing_rate_mm_s                  100
 alpha_slow_homing_rate_mm_s                  20

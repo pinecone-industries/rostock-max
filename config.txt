@@ -75,13 +75,13 @@ z_axis_max_speed                             30000
 # -------------- Arm -------------------- #
 
 arm_solution                                 linear_delta
-arm_length                                   290.8
+arm_length                                   300.22
 arm_radius                                   144.0
 
 
 # -------------- Planner -------------------- #
 
-acceleration                                 3000
+acceleration                                 2000
 junction_deviation                           0.05
 
 

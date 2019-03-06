@@ -4,22 +4,36 @@ alpha_step_pin                               2.0
 alpha_dir_pin                                0.5!
 alpha_en_pin                                 0.4
 alpha_current                                2.0
-alpha_steps_per_mm                           106.67
+alpha_steps_per_mm                           80
 alpha_max_rate                               30000.0
 
 beta_step_pin                                2.1
 beta_dir_pin                                 0.11
 beta_en_pin                                  0.10
 beta_current                                 2.0
-beta_steps_per_mm                            106.67
+beta_steps_per_mm                            80
 beta_max_rate                                30000.0
 
 gamma_step_pin                               2.2
 gamma_dir_pin                                0.20!
 gamma_en_pin                                 0.19
 gamma_current                                2.0
-gamma_steps_per_mm                           106.67
+gamma_steps_per_mm                           80
 gamma_max_rate                               30000.0
+
+
+# -------------- Geometry -------------------- #
+
+arm_solution                                 linear_delta
+
+arm_length                                   300.22
+arm_radius                                   143.4583
+
+gamma_max                                    387.05
+
+alpha_trim                                  -0.376
+beta_trim                                    0.000
+gamma_trim                                  -1.597
 
 
 # -------------- Endstops -------------------- #
@@ -28,34 +42,36 @@ endstops_enable                              true
 delta_homing                                 true
 
 alpha_min_endstop                            nc
-alpha_max_endstop                            1.25^
-alpha_homing_direction                       home_to_max
-alpha_max                                    0
-
 beta_min_endstop                             nc
-beta_max_endstop                             1.27^
-beta_homing_direction                        home_to_max
-beta_max                                     0
-
 gamma_min_endstop                            nc
-gamma_max_endstop                            1.29^
-gamma_homing_direction                       home_to_max
-gamma_max                                    287.3
 
-alpha_max_travel                             300
-beta_max_travel                              300
-gamma_max_travel                             300
+alpha_max_endstop                            1.25^
+beta_max_endstop                             1.27^
+gamma_max_endstop                            1.29^
+
+alpha_homing_direction                       home_to_max
+beta_homing_direction                        home_to_max
+gamma_homing_direction                       home_to_max
+
+alpha_max_travel                             460
+beta_max_travel                              460
+gamma_max_travel                             460
 
 alpha_trim                                   0.0
 beta_trim                                    0.0
 gamma_trim                                   0.0
 
 alpha_fast_homing_rate_mm_s                  100
-alpha_slow_homing_rate_mm_s                  20
 beta_fast_homing_rate_mm_s                   100
-beta_slow_homing_rate_mm_s                   20
 gamma_fast_homing_rate_mm_s                  100
+
+alpha_slow_homing_rate_mm_s                  20
+beta_slow_homing_rate_mm_s                   20
 gamma_slow_homing_rate_mm_s                  20
+
+alpha_homing_retract_mm                      3
+beta_homing_retract_mm                       3
+gamma_homing_retract_mm                      3
 
 
 # -------------- Motion -------------------- #
@@ -72,11 +88,26 @@ y_axis_max_speed                             30000
 z_axis_max_speed                             30000
 
 
-# -------------- Arm -------------------- #
+# -------------- Calibration -------------------- #
 
-arm_solution                                 linear_delta
-arm_length                                   300.22
-arm_radius                                   144.0
+delta_homing                                        true
+
+leveling-strategy.delta-grid.enable                 true
+leveling-strategy.delta-grid.save                   true
+
+leveling-strategy.delta-grid.size                   25
+leveling-strategy.delta-grid.do_home                true
+leveling-strategy.delta-grid.probe_offsets          0,0,0
+leveling-strategy.delta-grid.radius                 127
+leveling-strategy.delta-grid.initial_height         50
+
+zprobe.enable                                       true
+zprobe.probe_pin                                    1.24^
+
+zprobe.slow_feedrate                                50
+zprobe.fast_feedrate                                500
+zprobe.probe_height                                 1.7
+zprobe.return_feedrate                              0
 
 
 # -------------- Planner -------------------- #
@@ -120,6 +151,10 @@ temperature_control.hotend.pwm_frequency             100
 temperature_control.hotend.max_pwm                   255
 temperature_control.hotend.i_max                     255
 
+temperature_control.hotend.max_temp                  225
+temperature_control.hotend.runaway_heating_timeout   900
+temperature_control.hotend.runaway_range             20
+
 # E3D V6 (Standard)
 #temperature_control.hotend.p_factor                 67.9
 #temperature_control.hotend.i_factor                 5.993
@@ -129,10 +164,6 @@ temperature_control.hotend.i_max                     255
 #temperature_control.hotend.p_factor                 64.6705
 #temperature_control.hotend.i_factor                 4.5463
 #temperature_control.hotend.d_factor                 229.9844
-
-temperature_control.hotend.max_temp                  225
-temperature_control.hotend.runaway_heating_timeout   900
-temperature_control.hotend.runaway_range             20
 
 
 # -------------- Hotend Fan -------------------- #
@@ -148,6 +179,17 @@ switch.fan_hotend.enable                             true
 switch.fan_hotend.input_on_command                   M42
 switch.fan_hotend.input_off_command                  M43
 switch.fan_hotend.output_pin                         2.4
+
+
+# -------------- Layer Fan -------------------- #
+
+temperatureswitch.layer.enable                      true
+temperatureswitch.layer.switch                      fan_layer
+temperatureswitch.layer.designator                  L
+switch.fan_layer.enable                             true
+switch.fan_layer.input_on_command                   M106
+switch.fan_layer.input_off_command                  M107
+switch.fan_layer.output_pin                         2.6
 
 
 # -------------- Heated Bed -------------------- #
@@ -175,44 +217,16 @@ temperature_control.bed.i_max                        64
 temperature_control.bed.min_temp                     10
 temperature_control.bed.max_temp                     100
 
-# Halt if it takes more that {n} seconds to heat up
 temperature_control.bed.runaway_heating_timeout      300
-
-# Halt if temperature diverges from set point by {n} degrees
 temperature_control.bed.runaway_range                10
-
-
-alpha_homing_retract_mm                      3
-beta_homing_retract_mm                       3
-gamma_homing_retract_mm                      3
-
-# Endstop trim in software
-alpha_trim                                    0
-beta_trim                                     0
-gamma_trim                                    0
-
-
-# -------------- Bed Leveling -------------------- #
-
-# Example for the delta calibration strategy
-#leveling-strategy.delta-calibration.enable   true            # Enable basic delta calibration
-#leveling-strategy.delta-calibration.radius   100             # the probe radius
-
-# Example for the delta grid leveling strategy
-#leveling-strategy.delta-grid.enable          true            # Enable grid leveling
-#leveling-strategy.delta-grid.radius          50              # Grid radius in millimeters
-#leveling-strategy.delta-grid.size            7               # Grid size, must be an odd number
-#leveling-strategy.delta-grid.do_home         true            # Whether to home before calibration
-#leveling-strategy.delta-grid.save            true            # Whether to automatically save the grid
-#leveling-strategy.delta-grid.initial_height  10              # Height at which to start probling
 
 
 # -------------- Network -------------------- #
 
-network.enable                               false            # Enable the ethernet network services
-network.webserver.enable                     true             # Enable the webserver
-network.telnet.enable                        true             # Enable the telnet server
-network.ip_address                           auto             # Use dhcp to get ip address
+network.enable                               false
+network.webserver.enable                     true
+network.telnet.enable                        true
+network.ip_address                           auto
 
 currentcontrol_module_enable                 true
 currentcontrol_module_enable                 true

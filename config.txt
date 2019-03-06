@@ -29,6 +29,8 @@ arm_solution                                 linear_delta
 arm_length                                   300.22
 arm_radius                                   143.4583
 
+alpha_max                                    0
+beta_max                                     0
 gamma_max                                    387.05
 
 alpha_trim                                  -0.376

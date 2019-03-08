@@ -33,9 +33,9 @@ alpha_max                                    0
 beta_max                                     0
 gamma_max                                    387.05
 
-alpha_trim                                  -0.376
+alpha_trim                                   0.000
 beta_trim                                    0.000
-gamma_trim                                  -1.597
+gamma_trim                                   0.000
 
 
 # -------------- Endstops -------------------- #
@@ -114,7 +114,7 @@ zprobe.return_feedrate                              0
 
 # -------------- Planner -------------------- #
 
-acceleration                                 2000
+acceleration                                 500
 junction_deviation                           0.05
 
 
@@ -158,9 +158,9 @@ temperature_control.hotend.runaway_heating_timeout   900
 temperature_control.hotend.runaway_range             20
 
 # E3D V6 (Standard)
-#temperature_control.hotend.p_factor                 67.9
-#temperature_control.hotend.i_factor                 5.993
-#temperature_control.hotend.d_factor                 192
+temperature_control.hotend.p_factor                 67.9
+temperature_control.hotend.i_factor                 5.993
+temperature_control.hotend.d_factor                 192
 
 # E3D V6 (Volcano)
 #temperature_control.hotend.p_factor                 64.6705

@@ -31,7 +31,7 @@ arm_radius          140.0
 
 alpha_max           0.0
 beta_max            0.0
-gamma_max           372.0
+gamma_max           370.415
 
 alpha_trim          0.0
 beta_trim           0.0

@@ -27,15 +27,15 @@ gamma_max_rate                               30000.0
 arm_solution                                 linear_delta
 
 arm_length                                   300.22
-arm_radius                                   143.4583
+arm_radius                                   140
 
 alpha_max                                    0
 beta_max                                     0
-gamma_max                                    387.05
+gamma_max                                    372
 
-alpha_trim                                   0.000
-beta_trim                                    0.000
-gamma_trim                                   0.000
+alpha_trim                                   0
+beta_trim                                    0
+gamma_trim                                   0
 
 
 # -------------- Endstops -------------------- #
@@ -55,9 +55,9 @@ alpha_homing_direction                       home_to_max
 beta_homing_direction                        home_to_max
 gamma_homing_direction                       home_to_max
 
-alpha_max_travel                             460
-beta_max_travel                              460
-gamma_max_travel                             460
+alpha_max_travel                             550
+beta_max_travel                              550
+gamma_max_travel                             550
 
 alpha_trim                                   0.0
 beta_trim                                    0.0
@@ -213,7 +213,7 @@ temperature_control.bed.max_pwm                      64
 
 temperature_control.bed.p_factor                     19.2
 temperature_control.bed.i_factor                     0.267
-temperature_control.bed.d_factor                     343
+temperature_control.bed.d_factor                     363
 temperature_control.bed.i_max                        64
 
 temperature_control.bed.min_temp                     10

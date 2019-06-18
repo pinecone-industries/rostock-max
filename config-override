@@ -10,7 +10,7 @@ M203 X500.00000 Y500.00000 Z500.00000 S-1.00000
 ;Max actuator feedrates in mm/sec:
 M203.1 X500.00000 Y500.00000 Z500.00000 
 ;Optional arm solution specific settings:
-M665 A0.0000 B0.0000 C0.0000 D-0.3900 E-0.4400 H0.0000 L304.9500 R144.7700
+M665 L300.2200 R140.0000
 ;Digipot Motor currents:
 M907 X2.00000 Y2.00000 Z2.00000 A1.20000 
 ;E Steps per mm:
@@ -36,9 +36,9 @@ M143 S1 P100.0000
 ;Home offset (mm):
 M206 X0.00 Y0.00 Z0.22 
 ;Trim (mm):
-M666 X-3.460 Y-2.280 Z-3.000
+M666 X0.000 Y0.000 Z0.000
 ;Max Z
-M665 Z369.230
+M665 Z372.000
 ;Probe feedrates Slow/fast(K)/Return (mm/sec) max_z (mm) height (mm) dwell (s):
 M670 S50.00 K500.00 R0.00 Z372.00 H1.70 D0.00
 ;Probe offsets:

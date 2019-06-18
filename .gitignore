@@ -9,4 +9,6 @@
 
 # Smoothie Firmware binary
 FIRMWARE.CUR
-/.config.txt.swp
+
+# Config swap file
+.config.txt.swp

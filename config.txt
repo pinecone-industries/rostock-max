@@ -24,26 +24,26 @@ gamma_max_rate                               30000.0
 
 # -------------- Geometry -------------------- #
 
-arm_solution        linear_delta
+arm_solution         linear_delta
 
-arm_length          300.22
-arm_radius          140.0
+arm_length           309.45
+arm_radius           146.28
 
-alpha_max           0.0
-beta_max            0.0
-gamma_max           370.415
+alpha_max            0.0
+beta_max             0.0
+gamma_max            370.41
 
-alpha_trim          0.0
-beta_trim           0.0
-gamma_trim          0.0
+alpha_trim          -0.35
+beta_trim            0.70
+gamma_trim          -0.35
 
-delta_tower1_offset 0.0
-delta_tower2_offset 0.0
-delta_tower3_offset 0.0
+delta_tower1_offset  0.0
+delta_tower2_offset  0.0
+delta_tower3_offset  0.0
 
-delta_tower1_angle  0.0
-delta_tower2_angle  0.0
-delta_tower3_angle  0.0
+delta_tower1_angle   -0.49
+delta_tower2_angle   -0.14
+delta_tower3_angle   0.0
 
 
 # -------------- Endstops -------------------- #

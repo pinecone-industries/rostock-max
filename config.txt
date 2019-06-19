@@ -26,18 +26,18 @@ gamma_max_rate                               30000.0
 
 arm_solution         linear_delta
 
-arm_length           309.45
-arm_radius           146.28
+arm_length           308.97
+arm_radius           146.02
 
 alpha_max            0.0
 beta_max             0.0
-gamma_max            370.41
+gamma_max            370.49
 
-alpha_trim          -0.35
-beta_trim            0.70
-gamma_trim          -0.35
+alpha_trim          -0.64
+beta_trim            1.38
+gamma_trim          -0.74
 
-delta_tower1_angle   -0.49
+delta_tower1_angle   -0.55
 delta_tower2_angle   -0.14
 delta_tower3_angle   0.0
 

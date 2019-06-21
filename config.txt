@@ -159,7 +159,7 @@ temperature_control.hotend.i_max                     255
 
 temperature_control.hotend.max_temp                  225
 temperature_control.hotend.runaway_heating_timeout   900
-temperature_control.hotend.runaway_range             20
+temperature_control.hotend.runaway_range             15
 
 # E3D V6 (Standard)
 temperature_control.hotend.p_factor                 67.9
@@ -223,8 +223,8 @@ temperature_control.bed.i_max                        64
 temperature_control.bed.min_temp                     10
 temperature_control.bed.max_temp                     100
 
-temperature_control.bed.runaway_heating_timeout      300
-temperature_control.bed.runaway_range                10
+temperature_control.bed.runaway_heating_timeout      900
+temperature_control.bed.runaway_range                30
 
 
 # -------------- Network -------------------- #
